@@ -1,0 +1,31 @@
+{
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^22.13.5",
+    "eslint": "^9.19.0",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@prismicio/client": "^7.16.1",
+    "@types/node-cron": "^3.0.11",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.10.2",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.90.0",
+    "tsc": "^2.0.4",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "ts-node ./src/app.ts",
+    "build": "tsc"
+  }
+}

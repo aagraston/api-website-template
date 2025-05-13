@@ -1,0 +1,123 @@
+@use '../styles/variables';
+
+.scrolling-message-container {
+    position: relative;
+    width: 100%;
+    margin: 50px 0; // Adjust margin as needed
+    box-sizing: border-box;
+
+    .welcome-container {
+        height: 20px; // Adjust the height as needed
+        width: 100%;
+        background-color: variables.$black-color;
+        box-shadow: 0 0 0 2px variables.$black-color;
+        border: 1px solid variables.$white-color;
+        overflow: hidden;
+        position: relative; // Ensure the container is positioned relative to contain the absolute children
+        box-sizing: border-box;
+
+        .scrolling-message {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            animation: marqueeSteps 20s steps(200) infinite; // Adjust duration and steps as needed
+
+            p {
+                font-size: variables.$font-size-sm;
+                text-transform: uppercase;
+                color: variables.$white-color;
+                font-weight: 500;
+                white-space: nowrap; // Ensure the text does not wrap
+                padding-right: 100%; // Add space between repetitions
+            }
+        }
+    }
+
+    .tooltip-container {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 20px; // Match the height of the welcome-container
+        width: 20px; // Adjust width as needed
+        background-color: variables.$black-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid variables.$white-color;
+        z-index: 10; // Ensure it sits above the scrolling container
+
+        .tooltip-icon {
+            font-size: 0.8rem; // Adjust icon size as needed
+            color: variables.$white-color;
+            cursor: pointer;
+        }
+
+        .tooltip-text {
+            visibility: hidden;
+            width: 300px;
+            background-color: variables.$black-color;
+            color: variables.$white-color;
+            text-align: center;
+            border-radius: 6px;
+            padding: variables.$spacer-md;
+            position: absolute; // Use absolute positioning to escape the overflow hidden
+            z-index: 11; // Ensure it sits above the tooltip container
+            bottom: 150%; // Position the tooltip above the icon
+            right: -10px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            animation: fadeInSteps 0.3s steps(2, end) forwards;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                right: 10px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: variables.$black-color transparent transparent transparent;
+            }
+        }
+
+        &:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            animation: fadeInSteps 0.3s steps(2, end) forwards;
+        }
+
+        &:not(:hover) .tooltip-text {
+            animation: fadeOutSteps 0.3s steps(2, end) forwards;
+        }
+    }
+}
+
+@keyframes marqueeSteps {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes fadeInSteps {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutSteps {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

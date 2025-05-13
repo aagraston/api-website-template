@@ -1,0 +1,45 @@
+@use './styles/variables';
+
+.app {
+    padding-bottom: 100px;
+}
+
+.app-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: variables.$light-color;
+    /* Adjust background color as needed */
+    color: variables.$black-color;
+    /* Adjust text color as needed */
+    text-align: center;
+    padding: 10px 0;
+    /* Adjust padding as needed */
+    z-index: 1000;
+    /* Ensure the footer sits above other content */
+    left: 0;
+
+    p {
+        margin-bottom: variables.$spacer-sm;
+        /* Remove default margin */
+    }
+
+    .social-icons {
+        justify-content: center;
+        display: flex;
+        gap: 10px;
+
+        a {
+            color: variables.$black-color;
+            /* Adjust icon color as needed */
+            font-size: 1rem;
+            /* Adjust icon size as needed */
+            transition: color 0.3s;
+
+            &:hover {
+                color: variables.$secondary-color;
+                /* Adjust hover color as needed */
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+// Colors
+$primary-color: #007bff;
+$secondary-color: #554279;
+$success-color: #63d17d;
+$danger-color: #dc3545;
+$warning-color: #758dac;
+$info-color: #a8dfe7;
+$light-color: #f1f1df;
+$dark-color: #343a40;
+$white-color: #c7dba2;
+$black-color: #3c395f;
+
+// Fonts
+$font-family-base: "Inter", serif;
+$font-family-heading: 'IBM Plex Mono', monospace;
+
+// Font Sizes
+$font-size-base: 0.8rem; // 16px
+$font-size-sm: 0.875rem; // 14px
+$font-size-xsm: 0.75rem; // 12px
+$font-size-md: 1rem; // 18px
+$font-size-lg: 1rem; // 20px
+$font-size-xl: 1.5rem; // 24px
+$font-size-xxl: 2.2rem; // 32px
+
+// Spacers
+$spacer: 1rem; // 16px
+$spacer-xs: 0.25rem; // 4px
+$spacer-sm: 0.5rem; // 8px
+$spacer-md: 1rem; // 16px
+$spacer-lg: 3rem; // 32px
+$spacer-xl: 6rem; // 48px
+
+// Border Radius
+$border-radius: 0.25rem; // 4px
+$border-radius-sm: 0.125rem; // 2px
+$border-radius-lg: 0.5rem; // 8px
+
+// Shadows
+$box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;

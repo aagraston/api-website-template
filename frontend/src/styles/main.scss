@@ -1,0 +1,217 @@
+@use './variables';
+@use './base';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+// reset
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: variables.$spacer-lg variables.$spacer-xl variables.$spacer-lg variables.$spacer-xl;
+    text-align: center;
+
+    @media (max-width: 992px) {
+        padding: variables.$spacer-lg variables.$spacer-lg variables.$spacer-sm variables.$spacer-lg;
+    }
+
+    @media (max-width: 768px) {
+        padding: variables.$spacer-lg variables.$spacer-sm variables.$spacer-xs variables.$spacer-sm;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+    display: block;
+}
+
+body {
+    font-family: variables.$font-family-base; // Apply the font globally
+    color: variables.$black-color;
+    background-color: variables.$light-color;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+// includes
+
+h1 {
+    font-size: variables.$font-size-xxl;
+    font-weight: 300;
+    span {
+        color: variables.$secondary-color;
+    }
+}
+
+h2 {
+    margin-bottom: variables.$spacer-lg;
+    font-size: variables.$font-size-xl;
+    font-weight: 300;
+    span {
+        color: variables.$secondary-color;
+    }
+}
+
+h4 {
+    margin: 0;
+    font-size: variables.$font-size-sm;
+    color: variables.$secondary-color;
+}
+
+h3 {
+    margin: 0;
+    font-size: variables.$font-size-md;
+    font-weight: 600;
+}
+
+// universal classes
+.card {
+    padding: variables.$spacer-md;
+}
+
+// Ghost effect
+
+.ghost-effect {
+    position: relative;
+}
+
+.ghost-effect::before {
+    content: attr(data-text);
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--ghost-color, rgba(54, 181, 240, 0.74));
+    transform: translate(0px, var(--ghost-transform, 0.4px)); // Adjust offset for the ghost effect
+    z-index: -1;
+    pointer-events: none;
+    font-size: inherit; // Inherit font size
+    font-family: inherit; // Inherit font family
+    font-weight: inherit; // Inherit font weight
+    line-height: inherit; // Inherit line height
+    transition: transform 0.5s ease-out, color 0.5s ease-out;; // Add transition for smooth effect
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, small, strike, strong, sub, sup, tt, b, u, i, span {
+    position: relative;
+    z-index: 3;
+}
+
+.insertion-point {
+    display: inline-block;
+    position: absolute;
+    animation: blink 1s steps(2, start) infinite;
+    margin-left: 1px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
