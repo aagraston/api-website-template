@@ -13,8 +13,8 @@ const ScrollingMessage: React.FC = () => {
         const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/`);
         const data = await response.json();
         console.log(data);
-        if (data.welcomeGreeting) {
-          setWelcomeMessage(data.welcomeGreeting);
+        if (data.welcomeMessage) {
+          setWelcomeMessage(data.welcomeMessage);
         }
       } catch (error) {
         console.error('Error fetching welcome message:', error);
