@@ -8,6 +8,7 @@ import express from 'express';
 // Initialize the app
 const app = express();
 
+
 // Middleware
 
 //route for serving the welcome message
