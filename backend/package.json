@@ -26,6 +26,7 @@
   "scripts": {
     "start": "node dist/app.js",
     "dev": "ts-node ./src/app.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start-mongo": "mongod --config ./src/config/mongod.yaml"
   }
 }

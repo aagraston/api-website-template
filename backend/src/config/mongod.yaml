@@ -1,0 +1,14 @@
+# SYSTEM LOG SETTINGS
+systemLog:
+  destination: file
+  path: C:\Users\Aaron\MongoDB\logs\mongod.logs
+  logAppend: true
+  verbosity: 1
+
+# NETWORK SETTINGS
+net:
+  port: 27018
+
+#STORAGE
+storage:
+  dbPath: C:\Users\Aaron\MongoDB\data\db

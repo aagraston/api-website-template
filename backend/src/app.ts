@@ -6,12 +6,15 @@ dotenv.config();
 
 import express from 'express';
 
+//init mongo
+
 // Initialize the app
 const app = express();
 
 // Middleware
 app.use(cors(
   {
+    // move to environment variable
     origin: 'http://localhost:5173',
   }
 ));
