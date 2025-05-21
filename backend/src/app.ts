@@ -5,11 +5,13 @@ import cors from 'cors';
 dotenv.config();
 
 import express from 'express';
-
-//init mongo
+import connectDB from './config/db';
 
 // Initialize the app
 const app = express();
+
+//init mongo
+connectDB();
 
 // Middleware
 app.use(cors(

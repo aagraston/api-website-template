@@ -4,6 +4,7 @@ const connectDB = async () => {
     try {
         // set mongo URI in 
         const conn = await mongoose.connect(process.env.MONGO_URI as string);
+        
         console.log(`MongoDB Connected: ${conn.connection.host}`);
 
         // if mongo disconnects, log warning
@@ -17,7 +18,7 @@ const connectDB = async () => {
         });
 
     } catch (error) {
-        console.error(`Error: ${(error as Error).message}`);
+        console.error(`Error: ${(error as Error).message}, ${(error as Error).stack}`);
         process.exit(1);
     }
 };
