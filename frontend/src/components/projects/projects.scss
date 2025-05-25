@@ -1,0 +1,87 @@
+@use '../../styles/variables';
+
+.projects {
+    
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: stretch;
+    gap: variables.$spacer-md;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: variables.$spacer-xl;
+
+    >* {
+        box-shadow: variables.$box-shadow;
+        border-radius: variables.$border-radius;
+        flex: 1 1 300px;
+        max-width: 365px;
+
+        // these are class stylings for the layout of any given project card
+        .top-row,
+        .middle-row,
+        .bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: variables.$spacer-sm;
+            padding: variables.$spacer-sm;
+
+            h4 {
+                margin-bottom: variables.$spacer-sm;
+            }
+        }
+
+        .top-row {
+            .icon {
+                flex: 0.3; // this lets the title sit further left
+                text-align: left;
+                padding: 0;
+                margin: 0;
+                align-self: start;
+            }
+
+            .project-info {
+                flex: 3;
+                text-align: left;
+                align-self: start;
+
+            }
+
+            .right-column {
+                flex: 0; // how large is the final column
+                align-self: start;
+                text-align: right;
+
+                .icon-link {
+                    padding: 0;
+                    margin: 0;
+                    color: variables.$secondary-color;
+                }
+            }
+        }
+
+        .middle-row {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .bottom-row {
+
+            .left-column,
+            .middle-column,
+            .right-column {
+                flex: 1;
+                text-align: left;
+            }
+
+            .middle-column {
+                flex: 2;
+                text-align: left;
+            }
+        }
+    }
+}
