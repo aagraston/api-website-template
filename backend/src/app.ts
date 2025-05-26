@@ -6,6 +6,7 @@ dotenv.config();
 
 import express from 'express';
 import connectDB from './config/db';
+import gitProjectsRouter from './routes/gitProjects';
 
 // Initialize the app
 const app = express();
@@ -28,7 +29,9 @@ app.get('/', (req, res) => {
   res.json({
     welcomeMessage: 'Welcome, this data comes from the backend!',
   });
-})
+});
+
+app.use('/api/git-projects', gitProjectsRouter);
 
 // Environment variables and server setup
 const PORT = process.env.PORT || 5000; // Use the port from .env or default to 5000

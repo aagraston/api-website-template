@@ -4,12 +4,12 @@ import './GitProject.scss';
 
 interface GitProjectProps {
     title: string;
-    gitLink: string;
+    url: string;
     // commits: number;
     // lastCommitDate: string;
 }
 
-const GitProject: React.FC<GitProjectProps> = ({  title, gitLink }) => {
+const GitProject: React.FC<GitProjectProps> = ({  title, url }) => {
 
     // const date = new Date(lastCommitDate);
 
@@ -27,7 +27,7 @@ const GitProject: React.FC<GitProjectProps> = ({  title, gitLink }) => {
                 <div className="project-info">
                     <h3 className='ghost-effect' data-text={title}>{title}</h3>
                 </div>
-                <div className="right-column"><a href={gitLink} className="icon-link" target="_blank" rel="noopener noreferrer"><FaExternalLinkAlt /></a></div>
+                <div className="right-column"><a href={url} className="icon-link" target="_blank" rel="noopener noreferrer"><FaExternalLinkAlt /></a></div>
             </div>
             <div className="middle-row">
             </div>
